@@ -109,19 +109,19 @@ input,textarea{font:inherit;width:100%;padding:11px 14px;border-radius:14px;bord
 
 <script>
 var F=[
-["from","ชื่อเรา","เรา"],
+["from","ชื่อเรา","Win"],
 ["to","ชื่อแฟน (เว้นว่างได้ ให้เขาพิมพ์เอง)",""],
 ["scanTitle","หัวข้อหน้าสแกน","เอานิ้วมาสแกนหน่อย 👆"],
 ["scanHint","ข้อความใต้หัวข้อ","กดค้างไว้ให้แถบเต็มนะ"],
 ["resultTitle","ผลสแกน","เธอเหมาะกับเรา"],
 ["resultSub","ข้อความใต้ผลสแกน","ความเข้ากันได้ 100% 😌"],
-["question","คำถามใหญ่","เป็นแฟนกับเราได้ไหม? 💗"],
+["question","คำถามใหญ่","รักเค้ามั้ยยย💗💗"],
 ["subQuestion","ข้อความใต้คำถาม","คิดดี ๆ นะ ก่อนกดตอบ"],
-["yes","ปุ่มตอบรับ","ตกลงเป็นแฟนกัน 💗"],
-["no","ปุ่มปฏิเสธ (ปุ่มหนี)","ไม่เอา"],
-["celebrate","ข้อความฉลอง","เย้! เรามีแฟนแล้ว 🥰"],
-["certTitle","หัวใบรับรอง","ใบรับรองการเป็นแฟน"],
-["certBody","เนื้อหาในใบรับรอง","เป็นแฟนของ {from} อย่างถูกต้อง ตลอดไป ไม่เคยเปลี่ยนใจ 💖"]
+["yes","ปุ่มตอบรับ","รักมากกกก😍😍"],
+["no","ปุ่มปฏิเสธ (ปุ่มหนี)","ไม่รักอ่ะ💔💔"],
+["celebrate","ข้อความฉลอง","รักเหมือนกานนนน🥰"],
+["certTitle","หัวใบรับรอง","Happy Anniversary 1 Month"],
+["certBody","เนื้อหาในใบรับรอง","เป็นแฟนของ {from} ไปนานๆนะ"]
 ];
 var $=function(i){return document.getElementById(i)};
 var C={},shared=false;
@@ -210,7 +210,8 @@ function dodge(e){
   dodges++;
   no.classList.add("run");
   yes.style.transition="none";
-  yes.style.transform="scale("+Math.min(1+dodges*.08,1.6)+")";
+  var mx=Math.max(1,(innerWidth-24)/yes.offsetWidth);
+  yes.style.transform="scale("+Math.min(1+dodges*.15,mx,3.2)+")";
   var r=yes.getBoundingClientRect();
   yes.style.transition="";
   var w=no.offsetWidth,h=no.offsetHeight,m=12,g=20,x=m,y=m;
@@ -250,11 +251,7 @@ function confetti(){
 }
 
 /* boot */
-(function(){
-  var h=location.hash.slice(1);
-  if(h){try{var o=dec(h);defaults();for(var k in o)if(k in C)C[k]=String(o[k]);start(true);return}catch(e){}}
-  show("ed");
-})();
+start(true);
 </script>
 </body>
 </html>
